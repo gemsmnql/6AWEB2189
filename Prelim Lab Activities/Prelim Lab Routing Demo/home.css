@@ -1,0 +1,29 @@
+* {
+  font-family: 'Montserrat';
+  color: white;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 50px;
+  padding: 20px 30px;
+}
+
+.caption p{
+  line-height: 25px;
+}
+
+.caption h1 {
+  font-weight: bolder;
+  color: orange;
+  font-size: 3rem;
+}
+
+img {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 100%;
+  border: solid 4px yellow;
+}

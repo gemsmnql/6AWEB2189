@@ -1,0 +1,53 @@
+* {
+  font-family: 'Montserrat';
+}
+
+.highlighted {
+  background-color: yellow;
+}
+
+.part1, .part2{
+  background-color: rgb(224, 224, 224);
+  opacity: 0.8;
+  border-radius: 25px;
+}
+
+.part1-container, .part2-container {
+  margin-top: 20px;
+  padding: 20px 20px;
+}
+
+.fColor {
+  color: yellow;
+  font-size: 2rem;
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+.dBind {
+  color: black;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+.passing {
+  color: green;
+  font-weight: bold;
+}
+
+.failing {
+  color: red;
+  font-weight: bold;
+}
+
+.box {
+  border: 2px solid black;
+  margin-top: 10px;
+}
+
+

@@ -1,8 +1,0 @@
-.cv-container {
-  border-top: 4px solid rgb(45, 78, 168);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cv-container:hover {
-  transform: translateX(10px);
-}

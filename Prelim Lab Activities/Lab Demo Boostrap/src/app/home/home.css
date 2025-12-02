@@ -1,0 +1,39 @@
+* {
+  font-family: 'Montserrat';
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.profile:hover {
+  transform: translateX(5px);
+}
+.profile-container {
+  display: flex;
+  margin-top: 30px;
+  gap: 50px;
+  padding: 50px 30px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.caption p{
+  line-height: 25px;
+  color: black;
+}
+
+.caption h1 {
+  font-weight: bolder;
+  color: orange;
+  font-size: 3rem;
+}
+
+img {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 100%;
+  border: solid 4px yellow;
+}

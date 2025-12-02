@@ -1,0 +1,110 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+.part1, .part2 {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.part1-container, .part2-container {
+    width: 90%;
+    max-width: 900px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+h1, h2 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+}
+
+.dBind {
+    font-size: 32px;
+    color: #ffca28;
+}
+
+.fColor {
+    color: #f44336;
+}
+
+.highlighted {
+    background: #fff8c4;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+input {
+    width: 30%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    transition: 0.25s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color:rgb(248, 91, 91);
+    box-shadow: 0 0 5px rgba(63, 81, 181, 0.3);
+}
+
+/* Buttons */
+button {
+    background: rgb(248, 91, 91);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-weight: 500;
+}
+
+button:hover {
+    background: rgb(252, 67, 67);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.part1-container p img {
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.passing {
+    color: #0a8d48;
+    font-weight: 600;
+}
+
+.failing {
+    color: #c62828;
+    font-weight: 600;
+}
+
+.box {
+    border-radius: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    transition: 0.25s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.07);
+}
+
+.name {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+}

@@ -1,0 +1,45 @@
+<div class ="part1">
+
+  <div class="part1-container">
+    <h1 class = "dBind">{{ message }}</h1>
+
+    <h2 [class.fColor]="textColor">Hi! I'm Pikachu</h2>
+    <img [src] = "imageUrl" [width] ="w" [height]="h" [alt]="altText">
+
+    <p [class.highlighted]="isHighLighted">Pika-CHUUUU!</p>
+
+    <input [(ngModel)] = "yourName" placeholder="Enter your Name">
+    <p>Hello, {{ yourName }}, I'm a Pokemon</p>
+
+    <button (click) ="increment()">+ HP</button>
+    <button (click) ="decrement()">- HP</button>
+    <p>My HP : {{ count }}<img [src] = "hpimage" [width] ="HPw" [height]="HPh" [alt]="HPalt"></p>
+  </div>
+  </div>
+
+<div class="part2">
+  <div class="part2-container">
+      <h1 class = "name">{{ studentName }}</h1>
+    <section>
+      <h2>Property Binding</h2>
+      <img [src] = "imageURL" width="200"/>
+      <br><br>
+      <button [disabled]="isDisabled">Submit</button>
+    </section>
+
+    <h2>Class Binding</h2>
+    <p [class.passing] = "isPassing" [class.failing]="!isPassing">
+      Student Result: {{ isPassing ? 'Passed' : 'Failed' }}
+    </p>
+
+    <h2>Style Binding</h2>
+    <div
+      [style.background]="boxColor"
+      [style.width]="boxSize"
+      [style.height]="boxSize"
+      class  = "box">
+    </div>
+  </div>
+
+</div>
+

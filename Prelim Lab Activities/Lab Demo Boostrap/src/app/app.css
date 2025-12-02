@@ -1,0 +1,23 @@
+
+nav {
+  background-color: rgb(248, 91, 91);
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  border-radius: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-family:'Montserrat';
+  font-weight: bolder;
+  align-items: center;
+  padding: 30px 15px;
+  transition: 0.25s ease;
+}
+
+nav a:hover {
+  transform: translateY(-5px);
+  color: rgb(255, 255, 119);
+}

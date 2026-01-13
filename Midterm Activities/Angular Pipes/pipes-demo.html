@@ -1,0 +1,98 @@
+<div class="container">
+  <header class="page-header">
+    <h1>Angular Pipes</h1>
+  </header>
+
+  <section class="card">
+    <div class="card-header">
+      <h2>Date Pipes</h2>
+    </div>
+    <div class="row">
+      <div>
+        <p><strong>Today's Date:</strong> {{ presentDate | date }}</p>
+        <p><strong>Short Date:</strong> {{ presentDate | date:'shortDate' }}</p>
+        <p><strong>Full Date:</strong> {{ presentDate | date:'fullDate' }}</p>
+        <p><strong>Custom Format:</strong> {{ presentDate | date:'M/dd/yyyy' }}</p>
+        <p><strong>Time:</strong> {{ presentDate | date:'h:mm a' }}</p>
+        <p class="author">Author: James Mananquil</p>
+      </div>
+
+      <div>
+        <p><strong>Uppercase:</strong> {{ presentDate | date:'fullDate' | uppercase }}</p>
+        <p><strong>Lowercase:</strong> {{ presentDate | date:'medium' | lowercase }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-header">
+      <h2>Currency Pipe</h2>
+    </div>
+    <p><strong>PHP:</strong> {{ price | currency:'PHP' }}</p>
+    <p><strong>INR:</strong> {{ price | currency:'INR' }}</p>
+  </section>
+
+  <section class="card">
+    <div class="card-header">
+      <h2>Slice Pipe (Fruits Array)</h2>
+    </div>
+    <p><strong>Original Array:</strong> {{ fruits.join(', ') }}</p>
+    <p><strong>Start Index 2:</strong> {{ fruits | slice:2 }}</p>
+    <p><strong>Start 1 - End 4:</strong> {{ fruits | slice:1:4 }}</p>
+    <p><strong>Negative Index -2:</strong> {{ fruits | slice:-2 }}</p>
+    <p><strong>Negative Start -4 to -2:</strong> {{ fruits | slice:-4:-2 }}</p>
+  </section>
+
+  <section class="card center">
+    <div class="card-header">
+      <h2>Async Pipe</h2>
+    </div>
+    <p><strong>Current Time:</strong> {{ time$ | async | date:'mediumTime' }}</p>
+  </section>
+
+  <section class="card center">
+    <div class="card-header">
+      <h2>Decimal Pipe</h2>
+    </div>
+    <p><strong>Format (3 Decimal Places):</strong> {{ decimalNum1 | number:'1.3-3' }}</p>
+    <p><strong>Format (2 Decimal Places):</strong> {{ decimalNum1 | number:'1.2-2' }}</p>
+  </section>
+
+  <section class="card">
+    <div class="card-header">
+      <h2>Percent Pipe</h2>
+    </div>
+    <p><strong>Default:</strong> {{ percentValue }}</p>
+    <p><strong>2 Decimal Places:</strong> {{ percentValue | percent}}</p>
+  </section>
+
+  <section class="card">
+    <div class="card-header">
+      <h2>KeyValue Pipe (Student Info)</h2>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of studentInfo | keyvalue; track item.key) {
+          <tr>
+            <td>{{ item.key }}</td>
+            <td>{{ item.value }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <div class="card-header">
+      <h2>i18nSelect Pipe</h2>
+    </div>
+    <p><strong>Greeting:</strong> {{ gender | i18nSelect: genderMap }} James Mananquil</p>
+  </section>
+
+</div>

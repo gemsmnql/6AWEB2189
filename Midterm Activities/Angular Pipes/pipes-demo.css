@@ -1,0 +1,87 @@
+* {
+  font-family: 'Montserrat';
+}
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f7f8f9;
+  padding: 15px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.page-header h1 {
+  font-size: 2em;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+.page-header p {
+  color: #666;
+  font-size: 1em;
+}
+
+.card {
+  background: #ffffff;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+.card-header {
+  margin-bottom: 15px;
+}
+.card-header h2 {
+  font-size: 1.3em;
+  color: #34495e;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.row > div {
+  flex: 1;
+  min-width: 250px;
+}
+
+table.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+table.table th,
+table.table td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+}
+table.table th {
+  background-color: #f5f6f7;
+  font-weight: 600;
+}
+
+.center {
+  text-align: center;
+}
+
+.author {
+  font-weight: 600;
+  color: #555;
+}
+
+p {
+  margin: 6px 0;
+}

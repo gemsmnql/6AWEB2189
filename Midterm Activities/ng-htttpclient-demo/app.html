@@ -1,0 +1,40 @@
+<h2>LIST FROM MAIN</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>USERNAME</th>
+    <th>EMAIL</th>
+    <th>WEBSITE</th>
+  </tr>
+
+  @for (user of httpusers; track user.id) {
+  <tr class="border-b">
+    <td class="py-2 px-4 text-center">{{ user.id }}</td>
+    <td class="py-2 px-4 text-center">{{ user.name }}</td>
+    <td class="py-2 px-4 text-center">{{ user.username }}</td>
+    <td class="py-2 px-4 text-center">{{ user.email }}</td>
+    <td class="py-2 px-4 text-center">{{ user.website }}</td>
+  </tr>
+}
+</table>
+
+<h2>2ND LIST FROM MAIN</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>POSTID</th>
+    <th>COMMENT</th>
+    <th>LIKES</th>
+  </tr>
+
+  @for (comment of commentList; track comment.id) {
+  <tr class="border-b">
+    <td class="py-2 px-4 text-center">{{ comment.id }}</td>
+    <td class="py-2 px-4 text-center">{{ comment.postId }}</td>
+    <td class="py-2 px-4 text-center">{{ comment.body }}</td>
+    <td class="py-2 px-4 text-center">{{ comment.likes }}</td>
+  </tr>
+}
+</table>
+<router-outlet />

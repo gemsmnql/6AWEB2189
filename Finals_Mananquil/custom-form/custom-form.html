@@ -1,0 +1,47 @@
+<div class="custom-card">
+  <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
+    <h2>Study Space Booking</h2>
+    <p class="subtitle">HAU Library Reservation</p>
+
+    <div class="input-group">
+      <label>Student Name</label>
+      <input class="input" formControlName="name" placeholder="Enter full name" />
+      <div *ngIf="isInvalid('name')">
+        <small class="error">Name is required for booking logs</small>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>University ID / Contact</label>
+      <input class="input" formControlName="contact" placeholder="09XXXXXXXXX" />
+      <div *ngIf="isInvalid('contact')">
+        <small class="error">Valid 11-digit number required</small>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>Reservation Date</label>
+      <input class="input-date" type="date" formControlName="date" />
+      <div *ngIf="isInvalid('date')">
+        <small class="error">Please select a date</small>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>Booking Duration (Hours)</label>
+      <input class="input" type="number" min="1" max="12" formControlName="hours" placeholder="Max 12 hours" />
+      <div *ngIf="isInvalid('hours')">
+        <small class="error">Duration must be between 1 and 12</small>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>Special Requirements</label>
+      <textarea class="input" formControlName="comments" placeholder="e.g., Whiteboard needed, quiet zone, or group study..."></textarea>
+    </div>
+
+    <button class="btn" type="submit" [disabled]="customForm.invalid">
+      Confirm Reservation
+    </button>
+  </form>
+</div>

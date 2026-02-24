@@ -1,0 +1,17 @@
+<div style="display: flex; justify-content: center; margin-top: 24px; margin-bottom: 24px;">
+  <button class="switch-btn" [class.active]="selectedDemo === 'template'" (click)="selectedDemo = 'template'">Template Demo</button>
+  <button class="switch-btn" [class.active]="selectedDemo === 'reactive'" (click)="selectedDemo = 'reactive'">Reactive Demo</button>
+  <button class="switch-btn" [class.active]="selectedDemo === 'custom'" (click)="selectedDemo = 'custom'">Custom Form</button>
+</div>
+
+<div *ngIf="selectedDemo === 'template'; else otherBlock">
+  <app-template-demo></app-template-demo>
+</div>
+<ng-template #otherBlock>
+  <div *ngIf="selectedDemo === 'reactive'; else customBlock">
+    <app-reactive-demo></app-reactive-demo>
+  </div>
+  <ng-template #customBlock>
+    <app-custom-form></app-custom-form>
+  </ng-template>
+</ng-template>

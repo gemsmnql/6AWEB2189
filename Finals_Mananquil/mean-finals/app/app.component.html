@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Books Inventory</h1>
+
+  <div class="form-container">
+    <input id="newBook" placeholder="Title">
+    <input id="newDesc" placeholder="Description">
+    <input id="newAuthor" placeholder="Author">
+    <input id="newYear" placeholder="Year Published">
+    <input id="newPrice" type="number" placeholder="Book Price">
+
+    <button id="mainBtn" class="add-btn" (click)='addBook()'>Add Book</button>
+  </div>
+
+  <hr>
+
+  <div class="book-list">
+    @for (book of books; track book.id) {
+      <div class="book-card">
+        <div class="book-info">
+          <h3>{{ book.title }}</h3>
+          <p class="author">By: {{ book.author }}</p>
+          <p class="desc">{{ book.desc }}</p>
+          <div class="meta">
+            <span class="year">Released: {{ book.year }}</span>
+            <span class="price">${{ book.price }}</span>
+          </div>
+        </div>
+        <div class="button-group">
+          <button class="edit-btn" (click)="editBook(book)">Edit</button>
+          <button class="delete-btn" (click)="deleteBook(book.id)">Delete</button>
+        </div>
+      </div>
+    } @empty {
+      <p class="empty-msg">No books available in the library.</p>
+    }
+  </div>
+</div>

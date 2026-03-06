@@ -1,0 +1,66 @@
+<div class="form-container" [class.dark-theme]="isDarkMode">
+  <div class="header-row flex justify-between items-center">
+    <span class="logo">Esports <span>Tournament</span></span>
+    <mat-slide-toggle (change)="toggleTheme()" [checked]="isDarkMode">
+      <mat-icon>{{ isDarkMode ? 'dark_mode' : 'light_mode' }}</mat-icon>
+    </mat-slide-toggle>
+  </div>
+
+  <h2>Player Registration</h2>
+
+  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+    
+    <mat-form-field appearance="outline">
+      <mat-label>In-Game Name (IGN)</mat-label>
+      <input matInput formControlName="userName" placeholder="e.g. ProPlayer_01">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password">
+      @if (formdata.get('password')?.invalid && formdata.get('password')?.touched) {
+        <mat-error>Must be 8+ chars, alphanumeric, and start with a letter.</mat-error>
+      }
+    </mat-form-field>
+
+    <div class="radio-group">
+      <label class="radio-label">Preferred Role</label>
+      <mat-radio-group formControlName="role" class="gender-radio-group text-center">
+        <mat-radio-button value="Duelist">Duelist</mat-radio-button>
+        <mat-radio-button value="Sentinel">Sentinel</mat-radio-button>
+        <mat-radio-button value="Controller">Controller</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Birth Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      @if (formdata.get('birthDate')?.hasError('tooYoung')) {
+        <mat-error>Tournament restricted to players born 2006 or earlier.</mat-error>
+      }
+    </mat-form-field>
+
+    <div class="slider-group">
+      <label class="slider-label">Current Competitive Rank: {{formdata.get('rank')?.value}}</label>
+      <mat-slider [min]="1" [max]="10" step="1" discrete>
+          <input matSliderThumb formControlName="rank">
+      </mat-slider>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!formdata.valid || isLoading">
+      {{ isLoading ? 'Entering Arena...' : 'Join Tournament' }}
+    </button>
+
+    @if (submitted) {
+      <div class="submitted-results">
+        <p style="font-weight: bold; color: #E899D0;">Entry Confirmed</p>
+        <div class="result-item"><span class="result-label">IGN:</span> {{ formdata.value.userName }}</div>
+        <div class="result-item"><span class="result-label">Role:</span> {{ formdata.value.role }}</div>
+        <div class="result-item"><span class="result-label">Rank:</span> Level {{ formdata.value.rank }}</div>
+        <div class="result-item"><span class="result-label">Date of Birth:</span> {{ formdata.value.birthDate | date:'MM/dd/yyyy' }}</div>
+      </div>
+    }
+  </form>
+</div>
